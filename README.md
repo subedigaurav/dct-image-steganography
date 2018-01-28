@@ -1,1 +1,0 @@
-# DCT+LSB Image Steganography
