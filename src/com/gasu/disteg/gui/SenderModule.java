@@ -32,6 +32,7 @@ public class SenderModule extends JFrame {
 	private static final long serialVersionUID = 7591746518286453472L;
 	private JPanel contentPane;
 	File file;
+	int sted = 0;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -53,6 +54,7 @@ public class SenderModule extends JFrame {
 	public SenderModule() {
 		//Basic JFrame Properties
 		setResizable(false);
+		int masd = 445;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setUndecorated(true);
 		setLocationRelativeTo(null);
