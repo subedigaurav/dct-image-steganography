@@ -78,10 +78,10 @@ public class SignUpController implements Initializable{
 		});
 	}
 	
-	public void toLogin(MouseEvent event) throws IOException {
+	private void toLogin(MouseEvent event) throws IOException {
 		Parent signupStage=FXMLLoader.load(getClass().getResource("/fxml/logIn.fxml"));
 		Scene mainScene=new Scene(signupStage);
-		
+
 		//This Gets The Scene Info
 		Stage window=(Stage) ((Node) event.getSource()).getScene().getWindow();
 		mainScene.setFill(Color.TRANSPARENT);
@@ -130,7 +130,7 @@ public class SignUpController implements Initializable{
 
 	}
 	
-	public void resetfields() {
+	private void resetfields() {
 		//clear the input fields
 		userName.clear();
 		password.clear();

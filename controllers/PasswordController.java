@@ -41,14 +41,13 @@ public class PasswordController implements Initializable {
     @FXML
     private JFXPasswordField passwordField;
 
-    @FXML
-    private JFXButton okBtn;
-
     private int maxCharacters = 7;
     private double progressValue = 0;
     private int maxMsgSize;
     private double progressValueBar = 0.00;
     private double updateVal;
+
+    private MainWindow mainWindow = new MainWindow();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -85,22 +84,13 @@ public class PasswordController implements Initializable {
     }
 
     private void gotoEncoderMain(ActionEvent event) throws IOException {
-        Parent encoderParent = FXMLLoader.load(getClass().getResource("/fxml/qualitySelection.fxml"));
-        Scene encoderScene = new Scene(encoderParent);
-
-        // This Gets The Scene Info
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        encoderScene.setFill(Color.TRANSPARENT);
-        window.setScene(encoderScene);
-        window.centerOnScreen();
-        window.show();
+        mainWindow.throwWindow("/fxml/qualitySelection.fxml", event);
     }
 
     private void setMsgSizeMax() throws IOException {
         String imgPath;
         try (BufferedReader br = new BufferedReader(new FileReader(new File("D:/stegoInfo.txt")))) {
             imgPath = br.readLine();
-            br.close();
         }
         File file = new File(imgPath);
         BufferedImage image = ImageIO.read(file);
