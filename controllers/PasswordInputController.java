@@ -1,31 +1,20 @@
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextArea;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
-public class PasswordController implements Initializable {
+public class PasswordInputController implements Initializable {
     @FXML
     private JFXTextArea msgField;
 
@@ -53,8 +42,6 @@ public class PasswordController implements Initializable {
             progressValue += 0.125f;
             progress.setProgress(progressValue);
             if (passwordField.getText().length() > maxCharacters) {
-                System.out.println("Exceeded");
-                System.out.println(passwordField.getText());
                 e.consume();
             }
         });
@@ -64,7 +51,6 @@ public class PasswordController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(maxMsgSize);
 
         msgField.setPromptText("Max Message Size is " + maxMsgSize + " Characters");
         updateVal = maxMsgSize;
@@ -74,7 +60,6 @@ public class PasswordController implements Initializable {
             progressValueBar += updateVal;
             progressBar.setProgress(progressValueBar);
             if (msgField.getText().length() > maxMsgSize - 1) {
-                System.out.println("Max Message Length Exceeded");
                 e.consume();
             }
         });
@@ -93,25 +78,27 @@ public class PasswordController implements Initializable {
         //read image file from its path in the temporary directory
         File file = new File(imgPath);
         BufferedImage image = ImageIO.read(file);
+
+        // set the maxumum payload size value
         int numMcUs = ((image.getWidth() * image.getHeight()) / 64);
         maxMsgSize = numMcUs * 2;
     }
 
+    // Write the password and message input by the user to the temporary file.
     public void writePswrdMsg(ActionEvent event) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile, true));
+
         // write password
         String password = passwordField.getText() + System.lineSeparator();
-//        Files.write(Paths.get("D:/stegoInfo.txt"), password.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-//                StandardOpenOption.APPEND);
-        BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile, true));
         writer.write(password);
 
         // write message
         String msg = msgField.getText() + System.lineSeparator();
-//        Files.write(Paths.get("D:/stegoInfo.txt"), msg.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-//                StandardOpenOption.APPEND);
         writer.write(msg);
+
         writer.close();
-        // goto EncoderMain Window
+
+        // goto the encoder view
         gotoEncoderMain(event);
     }
 
