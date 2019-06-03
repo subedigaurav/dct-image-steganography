@@ -1,0 +1,15 @@
+.button{
+    -fx-background-color: purple; /* Green */
+    -fx-background-radius: 10;
+    -fx-font-size: 15;
+    -fx-text-fill: white;
+}
+
+.button:hover{
+	-fx-background-color: green;
+	-fx-text-fill: white;
+	-fx-cursor: hand;
+}
+.root{
+-fx-background-radius: 10;
+}

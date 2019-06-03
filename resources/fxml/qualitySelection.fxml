@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="537.0" style="-fx-background-color: #34383F; -fx-background-radius: 12;" stylesheets="@../css/qualitySelection.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QualitySelectionController">
+   <children>
+      <JFXButton layoutY="-2.0" prefHeight="59.0" prefWidth="537.0" ripplerFill="#aa00ff" style="-fx-background-color: #4a148c;" text="SELECT QUALITY FACTOR" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXButton>
+      <JFXSlider fx:id="progressSlider" blendMode="SCREEN" blockIncrement="1.0" layoutX="50.0" layoutY="92.0" prefHeight="14.0" prefWidth="437.0" showTickLabels="true" showTickMarks="true" value="80.0" />
+      <JFXButton fx:id="okBtn" layoutX="216.0" layoutY="138.0" onAction="#setQualityStartEncode" prefHeight="46.0" prefWidth="106.0" style="-fx-background-color: #4a148c; -fx-background-radius: 10;" text="OK" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+   </children>
+</AnchorPane>
