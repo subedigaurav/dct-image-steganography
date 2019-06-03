@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="721.0" style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DecoderViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="721.0" style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DecoderViewController">
    <children>
       <Text fill="WHITE" layoutX="209.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE DECODED MESSAGE IS">
          <font>
@@ -22,6 +21,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextArea fx:id="messageArea" editable="false" layoutX="74.0" layoutY="89.0" onMouseClicked="#populatePassword" onMouseEntered="#populatePassword" prefHeight="200.0" prefWidth="574.0" style="-fx-text-fill: #000000;" />
+      <TextArea fx:id="messageArea" editable="false" focusTraversable="false" layoutX="74.0" layoutY="89.0" onMouseClicked="#populatePassword" onMouseEntered="#populatePassword" prefHeight="200.0" prefWidth="574.0" scaleShape="false" wrapText="true" />
    </children>
 </AnchorPane>

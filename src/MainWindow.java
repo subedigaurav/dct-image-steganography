@@ -1,7 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -30,7 +27,14 @@ public class MainWindow extends Application {
         primaryStage.show();
     }
 
-    public Stage genNewStage(Parent parent, ActionEvent event) {
+    // LAUNCH THE MAIN APPLICATION
+    public static void main(String[] args){
+        launch(args);
+    }
+
+
+    /* Some Extra Functions */
+    private Stage genNewStage(Parent parent, ActionEvent event) {
         // This Gets The Scene Info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -49,11 +53,6 @@ public class MainWindow extends Application {
         // This Gets The Scene Info
         Stage window = genNewStage(mainParent, event);
         window.show();
-    }
-
-    // LAUNCH THE MAIN APPLICATION
-    public static void main(String[] args) throws FileNotFoundException {
-        launch(args);
     }
 
 }

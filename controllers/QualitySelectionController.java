@@ -37,13 +37,14 @@ public class QualitySelectionController implements Initializable {
 	@FXML
 	private JFXSlider progressSlider;
 
-	public static int quality = 80;
+	private static int quality = 80;
 	private static JPEGEncoder encoder;
-	static BufferedOutputStream outStream;
 	private static String password;
 	private static String plainMsg;
 
-	public void startEncode() throws IOException {
+	private MainWindow mainWindow = new MainWindow();
+
+	private void startEncode() throws IOException {
 		// retrieve file path from the temporary txt file and send it to the encoder
 		String imgPath;
 		try (BufferedReader br = new BufferedReader(new FileReader(new File("D:/stegoInfo.txt")))) {
@@ -54,7 +55,7 @@ public class QualitySelectionController implements Initializable {
 		encodeImage(file);
 	}
 
-	public static void encodeImage(File file) throws IOException {
+	private static void encodeImage(File file) throws IOException {
 		double fileSize = file.length();
 		double KB = fileSize / 1024;
 		KB = Double.parseDouble(String.format("%.1f", KB));
@@ -87,7 +88,7 @@ public class QualitySelectionController implements Initializable {
 	}
 
 	@FXML
-	void setQualityStartEncode(ActionEvent event) throws IOException {
+	private void setQualityStartEncode(ActionEvent event) throws IOException {
 		quality = (int) progressSlider.getValue();
 		System.out.println(quality);
 		startEncode();
@@ -98,15 +99,7 @@ public class QualitySelectionController implements Initializable {
 		goHome(event);
 	}
 
-	public void goHome(ActionEvent event) throws IOException {
-		Parent homeStage = FXMLLoader.load(getClass().getResource("/fxml/mainView.fxml"));
-		Scene homeScene = new Scene(homeStage);
-
-		// This Gets The Scene Info
-		Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		homeScene.setFill(Color.TRANSPARENT);
-		window.setScene(homeScene);
-		window.centerOnScreen();
-		window.show();
+	private void goHome(ActionEvent event) throws IOException {
+		mainWindow.throwWindow("/fxml/mainView.fxml", event);
 	}
 }
