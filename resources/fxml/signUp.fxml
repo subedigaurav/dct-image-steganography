@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="287.0" style="-fx-background-color: #32353C; -fx-background-radius: 10;" stylesheets="@../css/signup.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpController">
+   <children>
+      <Text layoutX="72.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STEGANOGRAPHY" wrappingWidth="195.005859375">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.26666666666666666" startY="0.7">
+               <stops>
+                  <Stop color="#2e7d32" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="VIBRA Regular" size="32.0" />
+         </font>
+      </Text>
+      <ImageView blendMode="DIFFERENCE" fitHeight="45.0" fitWidth="33.0" layoutX="36.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <ColorAdjust brightness="-0.02" contrast="-0.09" hue="0.4" />
+         </effect>
+         <image>
+            <Image url="@../images/hide.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lockIco" fitHeight="26.0" fitWidth="50.0" layoutX="38.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lock0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="userIco" fitHeight="27.0" fitWidth="18.0" layoutX="41.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/user0.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="userName" focusColor="#2e7d32" labelFloat="true" layoutX="65.0" layoutY="108.0" onMouseEntered="#setUserGreen" onMouseExited="#setUserWhite" prefHeight="27.0" prefWidth="179.0" promptText="Username" unFocusColor="WHITE">
+         <font>
+            <Font name="Ubuntu" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#2e7d32" labelFloat="true" layoutX="65.0" layoutY="178.0" onMouseEntered="#setLockGreen" onMouseExited="#seLockWhite" prefHeight="25.0" prefWidth="179.0" promptText="Password" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <Text fill="#9e9393" layoutX="63.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="©2018. GADS. All Rights Reserved." />
+      <Text fx:id="loginText" fill="RED" layoutX="176.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click Here." underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fill="WHITE" layoutX="63.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To the Login Screen?" wrappingWidth="112.0" />
+      <JFXButton fx:id="signUpBtn" buttonType="RAISED" layoutX="45.0" layoutY="234.0" onAction="#saveUser" prefHeight="38.0" prefWidth="204.0" ripplerFill="#00c853" style="-fx-background-color: #2e7d32; -fx-background-radius: 15;" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

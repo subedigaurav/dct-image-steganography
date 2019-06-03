@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<!--<?import de.jensd.fx.glyphs.*?>-->
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.svg.*?>
+<?import javafx.scene.effect.*?>
+<?import org.controlsfx.control.*?>
+<?import org.controlsfx.glyphfont.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="372.0" prefWidth="287.0" snapToPixel="false" style="-fx-background-color: #34383F; -fx-background-radius: 10;" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <children>
+      <JFXButton fx:id="loginBtn" buttonType="RAISED" layoutX="45.0" layoutY="234.0" onAction="#checkUser" prefHeight="38.0" prefWidth="204.0" ripplerFill="#aa00ff" style="-fx-background-color: #6a1b9a; -fx-background-radius: 15;" text="Login" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="70.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not a Valid User?" wrappingWidth="102.0" />
+      <Text fx:id="exitText" fill="RED" layoutX="165.0" layoutY="313.0" onMouseClicked="#cancelBtnActn" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit Here." underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Text>
+      <Text fill="#9e9393" layoutX="63.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="©2018. GADS. All Rights Reserved." />
+      <ImageView blendMode="DIFFERENCE" fitHeight="45.0" fitWidth="33.0" layoutX="36.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hide.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="-0.02" contrast="-0.09" hue="-0.63" />
+         </effect>
+      </ImageView>
+      <JFXTextField fx:id="user" focusColor="#6a1b9a" labelFloat="true" layoutX="65.0" layoutY="108.0" onMouseEntered="#setUserPurple" onMouseExited="#setUserWhite" prefHeight="27.0" prefWidth="179.0" promptText="Username" unFocusColor="WHITE">
+         <font>
+            <Font name="Ubuntu" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#6a1b9a" labelFloat="true" layoutX="65.0" layoutY="178.0" onMouseEntered="#setLockPurple" onMouseExited="#seLockWhite" prefHeight="25.0" prefWidth="179.0" promptText="Password" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXPasswordField>
+      <Text layoutX="72.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STEGANOGRAPHY" wrappingWidth="195.005859375">
+         <font>
+            <Font name="VIBRA Regular" size="32.0" />
+         </font>
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.26666666666666666" startY="0.7">
+               <stops>
+                  <Stop color="#a146dd" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <ImageView fx:id="userImg" fitHeight="27.0" fitWidth="18.0" layoutX="41.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/user0.png" />
+         </image></ImageView>
+      <ImageView fx:id="lockImg" fitHeight="26.0" fitWidth="50.0" layoutX="38.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lock0.png" />
+         </image>
+      </ImageView>
+      <JFXTabPane fx:id="tabPane" layoutX="-5.0" prefHeight="27.0" prefWidth="295.0" />
+      <JFXButton fx:id="signUpBtn" layoutX="75.0" layoutY="272.0" onAction="#toSignUp" text="Create an Account" textFill="#2e7d32" underline="true">
+         <font>
+            <Font name="Ubuntu" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <effect>
+      <Blend mode="DARKEN" />
+   </effect>
+</AnchorPane>

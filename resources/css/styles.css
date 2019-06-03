@@ -1,0 +1,24 @@
+.button{
+    -fx-background-color: #4a148c; /* Green */
+    -fx-background-radius: 20;
+    -fx-font-size: 23;
+    -fx-text-fill: white;
+}
+
+.button:hover{
+	-fx-background-color: #6c2daf;
+	-fx-text-fill: white;
+	-fx-cursor: hand;
+	-fx-blend-mode: lighten;
+}
+
+#exitBtn{
+	-fx-background-color: #b71c1c;
+	-fx-background-radius: 20;
+    -fx-font-size: 23;
+    -fx-text-fill: white;
+}
+
+#exitBtn:hover{
+	-fx-background-color: #d50000;
+}

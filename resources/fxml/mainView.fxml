@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" centerShape="false" focusTraversable="true" prefHeight="400.0" prefWidth="721.0" style="-fx-background-color: #34383f; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
+   <children>
+      <JFXButton layoutY="-11.0" prefHeight="50.0" prefWidth="823.0" ripplerFill="#fc521e" style="-fx-background-color: #b71c1c;" text=" " />
+      <Text fill="WHITE" layoutX="14.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digital Image Steganography" wrappingWidth="489.0">
+         <font>
+            <Font name="Ubuntu" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="95.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Art of Hiding Secret Messags in Images">
+         <font>
+            <Font name="Ubuntu Condensed" size="18.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="463.0" prefHeight="400.0" prefWidth="360.0" stylesheets="@../css/styles.css">
+         <children>
+            <Button fx:id="exitBtn" layoutX="93.0" layoutY="271.0" mnemonicParsing="false" onAction="#exitProgram" onMouseClicked="#exitProgram" prefHeight="50.0" prefWidth="253.0" text="Exit" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font></Button>
+            <Button fx:id="encodeBtn" layoutX="93.0" layoutY="79.0" mnemonicParsing="false" onAction="#gotoCoverSelection" prefHeight="50.0" prefWidth="253.0" text="Encode" />
+            <Button fx:id="decodeBtn" layoutX="93.0" layoutY="174.0" mnemonicParsing="false" onAction="#gotoStegoSelection" prefHeight="50.0" prefWidth="253.0" style="-fx-background-color: #004d40;" text="Decode" />
+            <Text fill="#b9b9b9" layoutX="151.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encode message in Image" />
+            <Text fill="#b9b9b9" layoutX="144.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decode the hidden message" />
+         </children>
+      </AnchorPane>
+      <Pane layoutY="359.0" prefHeight="50.0" prefWidth="823.0">
+         <children>
+            <Text fill="WHITE" layoutX="245.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Learn more about our project:" wrappingWidth="268.13671875">
+               <font>
+                  <Font name="Ubuntu" size="19.0" />
+               </font>
+            </Text>
+            <ImageView id="fbImg" fx:id="fbImg" blendMode="LIGHTEN" fitHeight="25.0" fitWidth="25.0" layoutX="513.0" layoutY="3.0" onMouseClicked="#openFBPage" onMouseEntered="#btnChangeFB" onMouseExited="#btnChangeResetFB" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+               <image>
+                  <Image url="@../images/facebook.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="gitImg" fitHeight="30.0" fitWidth="28.0" layoutX="551.0" onMouseClicked="#openGITPage" onMouseEntered="#btnChangeGIT" onMouseExited="#btnChangeResetGIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/github-logo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView blendMode="LIGHTEN" fitHeight="381.0" fitWidth="503.0" layoutY="10.0" opacity="0.55" pickOnBounds="true">
+         <image>
+            <Image url="@../images/steganography.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="marqueeText" fill="WHITE" layoutX="352.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME">
+         <font>
+            <Font name="Mother's Touches" size="29.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
