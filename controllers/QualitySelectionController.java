@@ -47,10 +47,10 @@ public class QualitySelectionController implements Initializable {
 	private void startEncode() throws IOException {
 		// retrieve file path from the temporary txt file and send it to the encoder
 		String imgPath;
-		try (BufferedReader br = new BufferedReader(new FileReader(new File("D:/stegoInfo.txt")))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(MainWindow.tempFile))) {
 			imgPath = br.readLine();
-			br.close();
 		}
+
 		File file = new File(imgPath);
 		encodeImage(file);
 	}
@@ -65,7 +65,7 @@ public class QualitySelectionController implements Initializable {
 		File dstFile = new File("D:\\stegoImage.jpg");
 		BufferedOutputStream outStream = new BufferedOutputStream(new FileOutputStream(dstFile));
 
-		try (BufferedReader br = new BufferedReader(new FileReader(new File("D:/stegoInfo.txt")))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(MainWindow.tempFile))) {
 			br.readLine();
 			password = br.readLine();
 			plainMsg = br.readLine();

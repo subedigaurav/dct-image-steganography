@@ -1,9 +1,4 @@
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.io.*;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -33,10 +28,13 @@ public class CoverImageSelectionController {
 
             // write file path to the txt file
             String filePath = imageFile.getAbsolutePath() + System.lineSeparator();
-            Files.write(Paths.get("D:/stegoInfo.txt"), filePath.getBytes(StandardCharsets.UTF_8),
-                    StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
+//            Files.write(Paths.get("D:/stegoInfo.txt"), filePath.getBytes(StandardCharsets.UTF_8),
+//                    StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile));
+            writer.write(filePath);
+            writer.close();
 
-            // go to password input window//
+            // go to password input window
             mainWindow.throwWindow("/fxml/PasswordInput.fxml", event);
         }
     }

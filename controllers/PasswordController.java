@@ -1,8 +1,5 @@
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -89,9 +86,11 @@ public class PasswordController implements Initializable {
 
     private void setMsgSizeMax() throws IOException {
         String imgPath;
-        try (BufferedReader br = new BufferedReader(new FileReader(new File("D:/stegoInfo.txt")))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(MainWindow.tempFile))) {
             imgPath = br.readLine();
         }
+
+        //read image file from its path in the temporary directory
         File file = new File(imgPath);
         BufferedImage image = ImageIO.read(file);
         int numMcUs = ((image.getWidth() * image.getHeight()) / 64);
@@ -101,13 +100,17 @@ public class PasswordController implements Initializable {
     public void writePswrdMsg(ActionEvent event) throws IOException {
         // write password
         String password = passwordField.getText() + System.lineSeparator();
-        Files.write(Paths.get("D:/stegoInfo.txt"), password.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-                StandardOpenOption.APPEND);
+//        Files.write(Paths.get("D:/stegoInfo.txt"), password.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
+//                StandardOpenOption.APPEND);
+        BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile, true));
+        writer.write(password);
 
         // write message
         String msg = msgField.getText() + System.lineSeparator();
-        Files.write(Paths.get("D:/stegoInfo.txt"), msg.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-                StandardOpenOption.APPEND);
+//        Files.write(Paths.get("D:/stegoInfo.txt"), msg.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
+//                StandardOpenOption.APPEND);
+        writer.write(msg);
+        writer.close();
         // goto EncoderMain Window
         gotoEncoderMain(event);
     }
