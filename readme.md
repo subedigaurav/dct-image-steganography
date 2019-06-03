@@ -1,6 +1,6 @@
 # DCT LSB Image Steganography Project
-It is a full-fledged JavaFX Application for hiding text messages in JPEG image. The technique is known as [Steganography](https://en.wikipedia.org/wiki/Steganography) <br />
-This project is the implementation of my own research paper. The paper can be found [here](http://kec.edu.np/a-secure-and-effective-pattern-based-steganographic-method-in-coloured-jpeg-images/).
+It is a full-fledged JavaFX Application for hiding text messages in JPEG image. The technique is known as [Steganography](https://en.wikipedia.org/wiki/Steganography) <br /><br />
+**This project is the implementation of my own research paper**. The corresponding paper can be found [here](http://kec.edu.np/a-secure-and-effective-pattern-based-steganographic-method-in-coloured-jpeg-images/).
 
 ## Installing
 ### Pre-requisites
