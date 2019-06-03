@@ -45,12 +45,13 @@ public class PasswordVerifyController {
             {28, 27, 26, 25, 29, 30, 31, 32, 33, 34, 35, 36, 40, 39, 38, 37},
             {25, 26, 27, 28, 36, 35, 34, 33, 32, 31, 30, 29, 37, 38, 39, 40}};
 
-    public static int checkPass(String inputPassword) throws IOException {
-        File file = new File("D:\\stegoImage.jpg");
+    //extract password from stegoImage and verify it
+    private static int checkPass(String inputPassword) throws IOException {
+        File file = new File("D:/stegoImage.jpg");
         InputStream istream = new FileInputStream(file);
+
         decode = new JPEGDecoder(istream);
         decode.startDecode();
-
         password = decode.getPass();
 
         Files.write(Paths.get("D:/decoder_info.txt"), password.getBytes(StandardCharsets.UTF_8),
@@ -81,10 +82,8 @@ public class PasswordVerifyController {
         decode.startDecode();
 
         message = grabMessage();
-        System.out.println(message);
+
         // write message
-//        Files.write(Paths.get("D:/decoder_info.txt"), message.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-//                StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
         BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile));
         writer.write(message);
         writer.close();
