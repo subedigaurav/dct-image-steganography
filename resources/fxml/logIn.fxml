@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<!--<?import de.jensd.fx.glyphs.*?>-->
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
-<?import com.jfoenix.svg.*?>
 <?import javafx.scene.effect.*?>
-<?import org.controlsfx.control.*?>
-<?import org.controlsfx.glyphfont.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane fx:id="root" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="372.0" prefWidth="287.0" snapToPixel="false" style="-fx-background-color: #34383F; -fx-background-radius: 10;" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">

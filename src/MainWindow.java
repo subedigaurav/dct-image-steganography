@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -11,8 +12,13 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class MainWindow extends Application {
+
+    public static File tempFile;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
+        createTempFile();
+
         // Read fxml file and draw interface.
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/logIn.fxml"));
@@ -28,9 +34,7 @@ public class MainWindow extends Application {
     }
 
     // LAUNCH THE MAIN APPLICATION
-    public static void main(String[] args){
-        launch(args);
-    }
+    public static void main(String[] args){launch(args);}
 
 
     /* Some Extra Functions */
@@ -53,6 +57,12 @@ public class MainWindow extends Application {
         // This Gets The Scene Info
         Stage window = genNewStage(mainParent, event);
         window.show();
+    }
+
+    //create the necessary temporary file
+    private void createTempFile() throws IOException{
+        tempFile = File.createTempFile("stego", "tmp");
+        tempFile.deleteOnExit();
     }
 
 }

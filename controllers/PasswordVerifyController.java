@@ -1,8 +1,4 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.nio.ShortBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -87,8 +83,11 @@ public class PasswordVerifyController {
         message = grabMessage();
         System.out.println(message);
         // write message
-        Files.write(Paths.get("D:/decoder_info.txt"), message.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-                StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
+//        Files.write(Paths.get("D:/decoder_info.txt"), message.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
+//                StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
+        BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile));
+        writer.write(message);
+        writer.close();
     }
 
     private static String grabMessage() throws IOException {

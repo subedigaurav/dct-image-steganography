@@ -1,4 +1,6 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -35,8 +37,11 @@ public class StegoImageSelectionController {
 
 			// write file path to the txt file
 			String filePath = imageFile.getAbsolutePath() + System.lineSeparator();
-			Files.write(Paths.get("D:/stegoInfo.txt"), filePath.getBytes(StandardCharsets.UTF_8),
-					StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+//			Files.write(Paths.get("D:/stegoInfo.txt"), filePath.getBytes(StandardCharsets.UTF_8),
+//					StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+			BufferedWriter writer = new BufferedWriter(new FileWriter(MainWindow.tempFile));
+			writer.write(filePath);
+			writer.close();
 
 			// go to password input window//
 			Parent encoderParent = FXMLLoader.load(getClass().getResource("/fxml/passwordVerify.fxml"));
