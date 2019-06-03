@@ -8,7 +8,7 @@ It is a full-fledged JavaFX Application for hiding text messages in JPEG image. 
  
     The confuguration of MySQL Server is:
     ```mysql
-    **server**: localhost
+    <b>server</b>: localhost
     port: 3306
     username: root
     password: none
