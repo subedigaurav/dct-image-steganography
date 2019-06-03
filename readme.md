@@ -1,8 +1,8 @@
-#DCT LSB Image Steganography Project
+# DCT LSB Image Steganography Project
 It is a full-fledged JavaFX Application for hiding messages (payload) in a JPEG image.
 
-##Installing
-###Pre-requisites
+## Installing
+### Pre-requisites
 1. <b>MySQL Server</b>
  
     The confuguration of MySQL DB is:
@@ -20,4 +20,4 @@ It is a full-fledged JavaFX Application for hiding messages (payload) in a JPEG 
     You can download the JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
     
 Launch the Application by running *MainWindow.java* located in the *src* folder.
-###Have a Nice Day!
+### Have a Nice Day!
