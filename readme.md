@@ -28,5 +28,8 @@ I am grateful to the maintainers of the following libraries:
 2. [ControlsFX](https://github.com/controlsfx/controlsfx)
 3. [Apache Commons Codec](https://commons.apache.org/proper/commons-codec/)
 
+## NOTE
+I developed the project in IntelliJ IDEA. You can use the *impl* file for configurations.
+
 ### Have a Nice Day!
 *Gaurav Subedi*
