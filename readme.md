@@ -20,7 +20,7 @@ It is a full-fledged JavaFX Application for hiding text messages in JPEG image. 
 
     You can download the JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
     
-Launch the Application by running *MainWindow.java* located in the *src* folder.
+Launch the Application by running *MainWindow.java* located in the *src->util* folder.
 
 ## Limitations
 1. The input image must have dimensions divisible by 8. This is because the MCU used for frequency domain transformation is of size 8x8.
