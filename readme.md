@@ -14,7 +14,7 @@ It is a full-fledged JavaFX Application for hiding text messages in JPEG image. 
     password: none
     ```
     You can use the above credentials, or use you own.
-    Modify the *DbUtil.java* file as necessary. The file is located in src->util
+    Modify the *DbUtil.java* file as necessary. The file is located in *src->util*
     
 2. **Java Development Kit 8**
 
