@@ -22,6 +22,10 @@ It is a full-fledged JavaFX Application for hiding text messages in JPEG image. 
     
 Launch the Application by running *MainWindow.java* located in the *src* folder.
 
+## Limitations
+1. The input image must have dimensions divisible by 8. This is because the MCU used for frequency domain transformation is of size 8x8.
+2. The imput image should be Baseline JPEG. Progressive JPEGs are not supported.
+
 ## Acknowledgements
 I would like to thank all the professionals in the field for their contribution.
 I am grateful to the maintainers of the following libraries:
