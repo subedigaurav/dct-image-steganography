@@ -6,7 +6,7 @@ It is a full-fledged JavaFX Application for hiding text messages in JPEG image. 
 ### Pre-requisites
 1. <b>MySQL Server</b>
  
-    The confuguration of MySQL Server is:
+    The configuration of MySQL Server is:
     ```mysql
     server: localhost
     port: 3306
